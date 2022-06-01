@@ -18,5 +18,8 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/drfs/', include('drfs.urls')),
+    path('api/v1/sounds/', include('sounds.urls')),
+    
+    ## this creates the ability to create a login button in the admin
+    path("api-auth/", include("rest_framework.urls")),
 ]

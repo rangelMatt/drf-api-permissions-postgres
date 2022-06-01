@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-h-@@x3r^@(3xny6w0-!&w-pyps93v)3(uc_@p5n)l567sha3#x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1',
+    '0.0.0.0',
+    ]
 
 
 # Application definition
@@ -42,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     
     #local
-    'drfs',
+    'sounds',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'drf_api_project.urls'
+ROOT_URLCONF = 'sound_api_project.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'drf_api_project.wsgi.application'
+WSGI_APPLICATION = 'sound_api_project.wsgi.application'
 
 
 # Database
@@ -81,8 +85,12 @@ WSGI_APPLICATION = 'drf_api_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
@@ -130,6 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
     ]
 }

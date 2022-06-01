@@ -1,6 +1,6 @@
-# Lab - Class 21
+# Lab - Class 32
 
-## Project:  Django REST Framework & Docker
+## Project:  Permissions & Postgresql
 
 ### Author: Matt Rangel
 
@@ -16,10 +16,17 @@ To deploy locally:
 
 - `python3 -m venv .venv`
 - `source .venv/bin/activate`
-- `pip install -r requirements.txt`
 - `python manage.py runserver`
+- `python -m pip install Django`
+- `pip install djangorestframework`
+- `pip freeze > requirements.txt`
 - `docker compose run`
+- `docker-compose up --build`
+- `docker-compose run web python manage.py migrate`
+- `docker-compose run web bash`
 
 ### Tests
 
 To initiate tests, run `python3 manage.py test`# django-models
+
+I did postgres before I ran the tests. So unfortunately I wasn't able to run the tests with dqlite.

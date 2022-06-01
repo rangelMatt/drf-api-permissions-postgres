@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Drf 
+from .models import Sound
 # Register your models here.
-admin.site.register(Drf)
+admin.site.register(Sound)

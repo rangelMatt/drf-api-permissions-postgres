@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Drf
+from .models import Sound
 
-class DrfSerializer(serializers.ModelSerializer):
+class SoundSerializer(serializers.ModelSerializer):
   class Meta:
     fields = ('id', 'owner', 'name', 'description', 'created_at')
-    model = Drf
+    model = Sound
     
     

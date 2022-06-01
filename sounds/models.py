@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 # Create your models here.
-class Drf(models.Model):
+class Sound(models.Model):
   owner = models.ForeignKey(get_user_model(),on_delete=models.CASCADE)
   name = models.CharField(max_length=64)
   description = models.TextField(default="")
